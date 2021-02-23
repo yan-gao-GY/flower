@@ -70,6 +70,7 @@ class Server:
         history = History()
         # Initialize weights by asking one client to return theirs
         self.weights = self._get_initial_weights()
+        self.straget.current_weights = self.weights
         res = self.strategy.evaluate(weights=self.weights)
         if res is not None:
             log(
